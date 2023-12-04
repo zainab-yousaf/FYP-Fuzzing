@@ -2,7 +2,8 @@ import streamlit as st
 import os
 import foundry
 import Auditor
-
+import slither
+from PIL import Image
 
 def sideBar():
     with st.sidebar:
@@ -55,6 +56,22 @@ if __name__ == "__main__":
         # Flatten the smart contract
         outputFlatten = foundryobj.flatten(contractName)
         st.text_area("Flattened Smart contract:", outputFlatten, height=600)
+    
+    #Generate Call Graph
+    if st.button("Generate Call graphs"):
+            # Generating Call graphs of smart contract
+            call_graph_png_path=slither.genCallGraph(contractName)
+            print("png file path",call_graph_png_path)
+            if os.path.exists(call_graph_png_path):
+                st.title("Call Graph Visualization")
+                
+                # Display the image
+                image = Image.open(call_graph_png_path)
+                st.image(image, caption='Call Graph', use_column_width=True)
+                
+            else:
+                st.error("Error: Call graph PNG file not found.")
+ 
             
 
 
