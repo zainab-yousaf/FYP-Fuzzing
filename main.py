@@ -27,6 +27,7 @@ def change_to_foundry_src():
 if __name__ == "__main__":
     foundryobj=foundry.FoundryProxy()
     auditorobj=Auditor.Auditor()
+    slitherobj=slither.SlitherProxy()
 
     st.title("FuzzBee 🐝")
     session_state = st.session_state
@@ -60,7 +61,7 @@ if __name__ == "__main__":
     #Generate Call Graph
     if st.button("Generate Call graphs"):
             # Generating Call graphs of smart contract
-            call_graph_png_path=slither.genCallGraph(contractName)
+            call_graph_png_path=slitherobj.genCallGraph(contractName)
             print("png file path",call_graph_png_path)
             if os.path.exists(call_graph_png_path):
                 st.title("Call Graph Visualization")
