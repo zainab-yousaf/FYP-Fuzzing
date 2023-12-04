@@ -12,10 +12,11 @@ class SlitherProxy:
     def genCallGraph(self, contractName):
         try:
             subprocess.run(['slither', contractName, '--print', 'call-graph'])
-            call_graph_path = os.path.join(self.output_folder, 'UnstoppableLender.sol.all_contracts.call-graph.dot')
+            call_graph_filename = f'{contractName}.all_contracts.call-graph.dot'
+            call_graph_path = os.path.join(self.output_folder, call_graph_filename)
 
             if os.path.exists(call_graph_path):
-                call_graph_png_path = os.path.join(self.output_folder, 'UnstoppableLender.sol.all_contracts.call-graph.dot.png')
+                call_graph_png_path = os.path.join(self.output_folder, f'{contractName}.all_contracts.call-graph.dot.png')
                 graph_source = Source.from_file(call_graph_path, format="png")
                 graph_source.render(view=False)  # Optional: Open the PNG file after rendering
                 print(f"Call Graph saved to: {call_graph_path}")
@@ -24,3 +25,4 @@ class SlitherProxy:
                 print("Error: Call graph file not created.")
         except subprocess.CalledProcessError as e:
             print(f"Error executing Slither: {e}")
+
