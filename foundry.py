@@ -32,6 +32,6 @@ class FoundryProxy:
     """ For Creating Foundry Project"""
     def createFoundry(self):
         current_dir = os.getcwd()
-        self.runSubProcess("forge init FoundryProject --no-commit", current_dir)
+        self.runSubProcess("forge init FoundryProject --force", current_dir)
 
 
