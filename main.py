@@ -64,6 +64,7 @@ if __name__ == "__main__":
             call_graph_png_path=slitherobj.genCallGraph(contractName)
             print("png file path",call_graph_png_path)
             if os.path.exists(call_graph_png_path):
+                #display callgraph image on the screen
                 st.title("Call Graph Visualization")
                 
                 # Display the image
@@ -71,6 +72,7 @@ if __name__ == "__main__":
                 st.image(image, caption='Call Graph', use_column_width=True)
                 
             else:
+                #display error in case file not found
                 st.error("Error: Call graph PNG file not found.")
  
             
