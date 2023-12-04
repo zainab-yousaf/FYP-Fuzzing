@@ -1,7 +1,6 @@
 import subprocess # library used to interact with command line
 import os
 from graphviz import Source
-import tempfile
 
 # slither proxy class for grnrrating the call graph
 class SlitherProxy:
