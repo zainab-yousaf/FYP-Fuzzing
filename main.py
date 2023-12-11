@@ -78,6 +78,7 @@ if __name__ == "__main__":
     if st.button("Generate list of state vars and functions"):
             # command to generate list of state variables and functions
             outputVarFun = slitherobj.genListOf_VarFun(contractName)    
+            st.text_area("Flattened Smart contract:", outputVarFun, height=600)
             # st.text_area("List of Variables and Functions in smart contract:", outputVarFun, height=600)
         
 
