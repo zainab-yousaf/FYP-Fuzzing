@@ -1,5 +1,6 @@
 import subprocess # library used to interact with command line
 import os
+import re
 from graphviz import Source
 
 # slither proxy class for grnrrating the call graph
@@ -29,7 +30,9 @@ class SlitherProxy:
     # command to generate list of state variables and functions
         subprocess.run(['slither', contractName, '--print', 'vars-and-auth'])
         with open(output_file, 'w') as output_file:
-            subprocess.run(['slither', contractName, '--print', 'vars-and-auth'], stdout=output_file, stderr=subprocess.STDOUT)
+            result = subprocess.run(['slither', contractName, '--print', 'vars-and-auth'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            cleaned_output = re.sub(r'\x1b\[[0-9;]*[mK]', '', result.stdout + result.stderr)  # Remove ANSI escape codes
+            output_file.write(cleaned_output)
 # result = subprocess.run(['slither', contractPath, '--print', 'vars-and-auth']
     #                         , shell=True, capture_output=True)
     # # Access the output
