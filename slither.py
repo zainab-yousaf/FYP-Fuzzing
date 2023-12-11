@@ -25,6 +25,14 @@ class SlitherProxy:
         except subprocess.CalledProcessError as e:
             print(f"Error executing Slither: {e}")
     #def highlightCallGraph(self, contractName):
+    def genListOf_VarFun(contractPath):
+    # command to generate list of state variables and functions
+        subprocess.run(['slither', contractPath, '--print', 'vars-and-auth'])
+    # result = subprocess.run(['slither', contractPath, '--print', 'vars-and-auth']
+    #                         , shell=True, capture_output=True)
+    # # Access the output
+    # output = result.stdout
+    # return output
 
 
 
