@@ -78,7 +78,7 @@ if __name__ == "__main__":
     if st.button("Generate list of state vars and functions"):
             # command to generate list of state variables and functions
             outputVarFun = slitherobj.genListOf_VarFun(contractName)    
-            output_file_path = './FoundryProject/src/output.txt'
+            output_file_path = 'FoundryProject/src/output.txt'
             with open(output_file_path, 'r') as file:
                 output_content = file.read()
             st.text_area("List of State Variables:", output_content, height=600)
