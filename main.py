@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     # When files are uploaded 
     if session_state.file_status:
-        contractName = st.text_input("Enter contract name", value="UnstoppableLender.sol")
+        contractName = st.text_input("Enter contract name", value=".sol")
         contractPath = f'FoundryProject/src/{contractName}'
         
         #change path to foundry source folder
