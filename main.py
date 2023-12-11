@@ -98,6 +98,9 @@ if __name__ == "__main__":
 
         # Display dropdown list
         selected_variable = st.selectbox("Select State Variable:", state_variables_list)
+        st.session_state.selected_variable = selected_variable
+        st.write("Selected Variable:", st.session_state.selected_variable)
+
 
         # Display information for the selected state variable
         
