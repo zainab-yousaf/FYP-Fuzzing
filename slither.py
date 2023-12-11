@@ -33,7 +33,7 @@ class SlitherProxy:
             result = subprocess.run(['slither', contractName, '--print', 'vars-and-auth'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             cleaned_output = re.sub(r'\x1b\[[0-9;]*[mK]', '', result.stdout + result.stderr)  # Remove ANSI escape codes
             output_file.write(cleaned_output)
-    def get_state_variables(output_file_path):
+    def get_state_variables(self, output_file_path):
     # Read the content of the output.txt file
         with open(output_file_path, 'r') as file:
             output_content = file.read()
