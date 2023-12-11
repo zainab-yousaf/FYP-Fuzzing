@@ -75,11 +75,11 @@ if __name__ == "__main__":
                 #display error in case file not found
                 st.error("Error: Call graph PNG file not found.")
  
-    '''if st.button("Generate list of state vars and functions"):
+    if st.button("Generate list of state vars and functions"):
             # command to generate list of state variables and functions
             outputVarFun = slither.genListOf_VarFun(contractName)    
             # st.text_area("List of Variables and Functions in smart contract:", outputVarFun, height=600)
-        '''
+        
 
 
      
