@@ -34,7 +34,7 @@ if __name__ == "__main__":
     session_state.file_status = getattr(session_state,"file_status",False)
     
 
-    os.chdir("/home/zainab/Documents/FYP-Fuzzing")
+    os.chdir("/Users/muaazzz/Desktop/Fuzzing Github/FYP-Fuzzing")
     print("current directory: ", os.getcwd())
 
     sideBar()

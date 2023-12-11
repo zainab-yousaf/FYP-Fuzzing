@@ -24,4 +24,8 @@ class SlitherProxy:
                 print("Error: Call graph file not created.")
         except subprocess.CalledProcessError as e:
             print(f"Error executing Slither: {e}")
+    #def highlightCallGraph(self, contractName):
+
+
+
 
