@@ -83,6 +83,25 @@ if __name__ == "__main__":
                 output_content = file.read()
             st.text_area("List of State Variables:", output_content, height=600)
             # st.text_area("List of Variables and Functions in smart contract:", outputVarFun, height=600)
+
+    '''if st.button("View List of State Variables"):
+            # command to generate list of state variables and functions
+            output_file_path = '/Users/muaazzz/Desktop/Fuzzing Github/FYP-Fuzzing/FoundryProject/src/output.txt'
+            outputList = slitherobj.get_state_variables(output_file_path)    
+            with open(output_file_path, 'r') as file:
+                output_content = file.read()
+            st.text_area("List of State Variables:", output_content, height=600)'''
+    if st.button("View List of State Variables"):
+    # command to generate list of state variables and functions
+        output_file_path = '/Users/muaazzz/Desktop/Fuzzing Github/FYP-Fuzzing/FoundryProject/src/output.txt'
+        state_variables_list = slitherobj.get_state_variables(output_file_path)
+
+        # Display dropdown list
+        selected_variable = st.selectbox("Select State Variable:", state_variables_list)
+
+        # Display information for the selected state variable
+        selected_variable_info = "Information for " + selected_variable + " goes here."
+        st.text_area("State Variable Information:", selected_variable_info, height=200)
         
 
 
