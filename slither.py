@@ -27,6 +27,7 @@ class SlitherProxy:
     #def highlightCallGraph(self, contractName):
     def genListOf_VarFun(self, contractName, output_file='output.txt'):
     # command to generate list of state variables and functions
+        subprocess.run(['slither', contractName, '--print', 'vars-and-auth'])
         with open(output_file, 'w') as output_file:
             subprocess.run(['slither', contractName, '--print', 'vars-and-auth'], stdout=output_file, stderr=subprocess.STDOUT)
 # result = subprocess.run(['slither', contractPath, '--print', 'vars-and-auth']
