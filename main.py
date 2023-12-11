@@ -100,8 +100,6 @@ if __name__ == "__main__":
         selected_variable = st.selectbox("Select State Variable:", state_variables_list)
 
         # Display information for the selected state variable
-        selected_variable_info = "Information for " + selected_variable + " goes here."
-        st.text_area("State Variable Information:", selected_variable_info, height=200)
         
 
 
