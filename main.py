@@ -91,17 +91,17 @@ if __name__ == "__main__":
             with open(output_file_path, 'r') as file:
                 output_content = file.read()
             st.text_area("List of State Variables:", output_content, height=600)'''
-    if st.button("View List of State Variables"):
+    #if st.button("View List of State Variables"):
     # command to generate list of state variables and functions
-        output_file_path = '/Users/muaazzz/Desktop/Fuzzing Github/FYP-Fuzzing/FoundryProject/src/output.txt'
-        state_variables_list = slitherobj.get_state_variables(output_file_path)
+    output_file_path = '/Users/muaazzz/Desktop/Fuzzing Github/FYP-Fuzzing/FoundryProject/src/output.txt'
+    state_variables_list = slitherobj.get_state_variables(output_file_path)
 
         # Display dropdown list
-        selected_variable = st.selectbox("Select State Variable:", state_variables_list)
-        st.session_state.selected_variable = selected_variable
-        st.text_area("Selected Variable:", st.session_state.selected_variable)
+    selected_variable = st.selectbox("Select State Variable:", state_variables_list)
+    st.session_state.selected_variable = selected_variable
+    st.text_area("Selected Variable:", st.session_state.selected_variable)
 
-
+    
         # Display information for the selected state variable
         
 
